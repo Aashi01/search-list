@@ -1,0 +1,32 @@
+var list = React.createClass({
+  getInitialResult: function(){
+  			return consoleList();
+  },
+  handleClick: function(e){
+    console.log("Fetching result");
+  },
+  
+  render: function(){
+    var users = this.state.users.map(function(user){
+    
+    return(
+      <tr onClick= {this.handleClick}>
+      <td>{user.id}</td>
+      <td>{user.name}</td>
+      <td>{user.gender}</td>
+      </tr>
+      </tr>
+    );
+    });
+    
+    return(
+    <div className= "container">
+      <table className= "Users">
+        <tbody>
+       		 {users}
+        </tbody>
+      </table>
+    </div>
+   );
+  }
+});
